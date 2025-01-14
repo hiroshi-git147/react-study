@@ -4,7 +4,7 @@ import styles from "@/styles/Home.module.css";
 import { Header } from "@/components/Header";
 import { Main } from "@/components/Main";
 import { Footer } from "@/components/Footer";
-import { useCallback, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,22 +17,20 @@ const geistMono = Geist_Mono({
 });
 
 export default function Home() {
-  const foo = 1;
+  const [foo, setFoo] = useState(1);
 
-  const handleClick = useCallback((e) => {
-    console.log(e.target.href);
-    e.preventDefault();
-    alert(foo);
-  }, []);
+  const handleClick = (e) => {
+    setFoo((foo) => foo + 1);
+  };
 
   useEffect(() => {
-    console.log("マウント時");
     document.body.style.backgroundColor = "lightblue";
     return () => {
-      console.log("アンマウント時");
       document.body.style.backgroundColor = "";
     };
   }, []);
+
+  console.log(foo);
 
   return (
     <>
@@ -45,10 +43,11 @@ export default function Home() {
       >
         {/* ヘッダーコンポーネント */}
         <Header />
+        <h1>{foo}</h1>
 
-        <a href="/about" onClick={handleClick}>
+        <button href="/about" onClick={handleClick}>
           ボタン
-        </a>
+        </button>
         {/* メインコンポーネント */}
         <Main page="index" />
 
