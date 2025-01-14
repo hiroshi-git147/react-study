@@ -15,6 +15,7 @@ export function Footer() {
           alt="File icon"
           width={16}
           height={16}
+          priority
         />
         Learn
       </a>
@@ -29,6 +30,7 @@ export function Footer() {
           alt="Window icon"
           width={16}
           height={16}
+          priority
         />
         Examples
       </a>
@@ -43,6 +45,7 @@ export function Footer() {
           alt="Globe icon"
           width={16}
           height={16}
+          priority
         />
         Go to nextjs.org →
       </a>

@@ -4,6 +4,7 @@ import styles from "@/styles/Home.module.css";
 import { Header } from "@/components/Header";
 import { Main } from "@/components/Main";
 import { Footer } from "@/components/Footer";
+import { useCallback } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,6 +17,14 @@ const geistMono = Geist_Mono({
 });
 
 export default function Home() {
+  const foo = 1;
+
+  const handleClick = useCallback((e) => {
+    console.log(e.target.href);
+    e.preventDefault();
+    alert(foo);
+  }, []);
+
   return (
     <>
       <Head>
@@ -28,8 +37,11 @@ export default function Home() {
         {/* ヘッダーコンポーネント */}
         <Header />
 
+        <a href="/about" onClick={handleClick}>
+          ボタン
+        </a>
         {/* メインコンポーネント */}
-        <Main page = "index" />
+        <Main page="index" />
 
         {/* フッターコンポーネント */}
         <Footer />

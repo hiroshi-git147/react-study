@@ -12,8 +12,8 @@ const ITEMS = [
     href: "https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
     className: styles.secondary,
     description: "Read our docs",
-  }
-]
+  },
+];
 
 export function Links() {
   return (
@@ -33,6 +33,7 @@ export function Links() {
               alt="Vercel logomark"
               width={20}
               height={20}
+              priority
             />
           )}
           {item.description}
