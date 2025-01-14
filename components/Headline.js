@@ -2,7 +2,6 @@ import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 
 export function Headline(props) {
-  console.log(props);
   return (
   <div>
     <Image
@@ -14,9 +13,7 @@ export function Headline(props) {
       priority
     />
     <ol>
-      <li>
-        Get started by editing <code>src/pages/{props.pages}.js</code>.
-      </li>
+      {props.children}
       <li>Save and see your changes instantly.</li>
     </ol>
   </div>
