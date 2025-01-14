@@ -1,6 +1,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --accent-color1: #D2B48C; /* ベージュ */
+  --accent-color2: #A8D5BA; /* セージグリーン */
 }
 
 @media (prefers-color-scheme: dark) {

@@ -3,6 +3,7 @@ import styles from "@/styles/Home.module.css";
 import Head from "next/head";
 import { Main } from "../../components/Main";
 import { Footer } from "../../components/Footer";
+import { Header } from "../../components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +28,9 @@ export default function Home() {
       <div
         className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
       >
+        {/* ヘッダーコンポーネント */}
+        <Header />
+
         {/* メインコンポーネント */}
         <Main page = "index" />
 
