@@ -28,9 +28,15 @@ export default function Home() {
         className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
       >
         <main className={styles.main}>
-          <Headline pages="index"/>
+          
+          <Headline 
+            pages="about"
+            number={111}
+            obj={ { foo: 'foo', bar: 'bar'}}
+            boolean={false}
+          />
 
-        <Links />
+          <Links />
         </main>
         <Footer />
       </div>
