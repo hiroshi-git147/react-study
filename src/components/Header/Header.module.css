@@ -1,15 +1,30 @@
 .header {
   width: 100%;
-  height: 100px;
+  height: 70px;
   border-bottom: 1px solid #eaeaea;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 40px 2.5rem;
 }
 
 .header > a {
   display: inline-block;
-  margin: 0 .5rem;
+  margin: 0 0.5rem;
   font-size: 1.2rem;
 }
 
+.logo {
+  height: inherit;
+  width: inherit;
+}
+
+.navlink {
+  margin: 0 1rem;
+  font-weight: bolder;
+}
+
+.header_icons > div {
+  font-size: 30px;
+  margin-right: 1rem;
+}

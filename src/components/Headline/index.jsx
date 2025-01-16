@@ -1,22 +1,19 @@
 import Image from "next/image";
 import styles from "./Headline.module.css";
 
-export function Headline(props) {
+export function Headline() {
   return (
-  <div>
-    <Image
-      className={styles.logo}
-      src="/next.svg"
-      alt="Next.js logo"
-      width={180}
-      height={38}
-      priority
-    />
-    <ol>
-      {props.children}
-      <li>Save and see your changes instantly.</li>
-    </ol>
-  </div>
-    
+    <div className={styles.background}>
+      <div className={styles.content}>
+        <h3>fresh coffee in the morning</h3>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat
+          labore, sint cupiditate distinctio tempora reiciendis.
+        </p>
+        <a href="#" className={styles.btn}>
+          get yours now
+        </a>
+      </div>
+    </div>
   );
 }

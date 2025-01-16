@@ -1,8 +1,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --accent-color1: #D2B48C; /* ベージュ */
-  --accent-color2: #A8D5BA; /* セージグリーン */
+  --accent-color1: #d2b48c; /* ベージュ */
+  --accent-color2: #a8d5ba; /* セージグリーン */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,7 +38,12 @@ a {
 }
 
 a:hover {
-  color: #A8D5BA;
+  color: #a8d5ba;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
 }
 
 @media (prefers-color-scheme: dark) {

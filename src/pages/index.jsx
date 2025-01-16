@@ -4,7 +4,7 @@ import styles from "@/styles/Home.module.css";
 import { Header } from "@/components/Header";
 import { Main } from "@/components/Main";
 import { Footer } from "@/components/Footer";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,21 +16,25 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// index画面
 export default function Home() {
-  const [foo, setFoo] = useState(1);
+  // flgをuseStateで管理し初期値:true
+  const [flg, setFlg] = useState(true);
 
-  const handleClick = (e) => {
-    setFoo((foo) => foo + 1);
-  };
+  const handleClick = useCallback(() => {
+    // TODO
+    console.log(flg);
 
-  useEffect(() => {
-    document.body.style.backgroundColor = "lightblue";
-    return () => {
-      document.body.style.backgroundColor = "";
-    };
-  }, []);
-
-  console.log(foo);
+    /**
+     * true elementsの中身を表示
+     * false elementsの中身を非表示
+     */
+    if (flg) {
+      setFlg(false);
+    } else {
+      setFlg(true);
+    }
+  }, [flg]);
 
   return (
     <>
@@ -43,14 +47,19 @@ export default function Home() {
       >
         {/* ヘッダーコンポーネント */}
         <Header />
-        <h1>{foo}</h1>
-
+        {/* メインコンポーネント */}
+        <Main page="index" />
         <button href="/about" onClick={handleClick}>
           ボタン
         </button>
-        {/* メインコンポーネント */}
-        <Main page="index" />
-
+        <h1>{count}</h1>
+        {flg ? (
+          <>
+            <div id="contents">aaaaa</div>
+          </>
+        ) : (
+          <></>
+        )}
         {/* フッターコンポーネント */}
         <Footer />
       </div>
