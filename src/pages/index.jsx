@@ -20,25 +20,28 @@ const geistMono = Geist_Mono({
 export default function Home() {
   // flgをuseStateで管理し初期値:true
   const [flg, setFlg] = useState(true);
+  const [text, setText] = useState("");
+  const [array, setArray] = useState([]);
 
-  const handleClick = useCallback(() => {
-    // TODO
-    console.log(flg);
-
-    /**
-     * true elementsの中身を表示
-     * false elementsの中身を非表示
-     */
-    if (flg) {
-      setFlg(false);
-    } else {
-      setFlg(true);
-    }
-  }, [flg]);
-
+  // flgを切り替える
   const handleDisplay = useCallback(() => {
     setFlg((hiddenBtn) => !hiddenBtn);
   }, []);
+
+  // テキスト入力の変更を管理
+  const handleChange = useCallback((e) => {
+    setText(e.target.value);
+  }, []);
+
+  // 配列に新しい項目を追加
+  const handleAdd = useCallback(() => {
+    setArray((prevArray) => {
+      if (prevArray.some((item) => item === text)) {
+        return prevArray;
+      }
+      return [...prevArray, text];
+    });
+  }, [text]);
 
   return (
     <>
@@ -57,6 +60,14 @@ export default function Home() {
           ボタン
         </button>
         {flg && <div>aaaaa</div>}
+
+        <input type="text" value={text} onChange={handleChange} />
+        <button onClick={handleAdd}>追加</button>
+        <ul>
+          {array.map((item) => {
+            return <li key={item}>{item}</li>;
+          })}
+        </ul>
 
         {/* フッターコンポーネント */}
         <Footer />
