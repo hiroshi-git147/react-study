@@ -36,6 +36,10 @@ export default function Home() {
     }
   }, [flg]);
 
+  const handleDisplay = useCallback(() => {
+    setFlg((hiddenBtn) => !hiddenBtn);
+  }, []);
+
   return (
     <>
       <Head>
@@ -49,16 +53,11 @@ export default function Home() {
         <Header />
         {/* メインコンポーネント */}
         <Main page="index" />
-        <button href="/about" onClick={handleClick}>
+        <button href="/about" onClick={handleDisplay}>
           ボタン
         </button>
-        {flg ? (
-          <>
-            <div>aaaaa</div>
-          </>
-        ) : (
-          <></>
-        )}
+        {flg && <div>aaaaa</div>}
+
         {/* フッターコンポーネント */}
         <Footer />
       </div>
