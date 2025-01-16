@@ -52,7 +52,6 @@ export default function Home() {
         <button href="/about" onClick={handleClick}>
           ボタン
         </button>
-        <h1>{count}</h1>
         {flg ? (
           <>
             <div id="contents">aaaaa</div>
