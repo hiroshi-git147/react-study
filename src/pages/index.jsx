@@ -54,7 +54,7 @@ export default function Home() {
         </button>
         {flg ? (
           <>
-            <div id="contents">aaaaa</div>
+            <div>aaaaa</div>
           </>
         ) : (
           <></>
